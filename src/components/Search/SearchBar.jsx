@@ -1,16 +1,15 @@
-import {AiOutlineSearch} from 'react-icons/ai';
+// import {AiOutlineSearch} from 'react-icons/ai';
 
 
-function SearchBar({value, onChangeText}) {
+function SearchBar({value, onChangeFunc}) {
 
   return (
-    <div className="search-container">
+    <div className="search-container my-4">
       {/* <AiOutlineSearch /> */}
       <input
         className='sbx-custom__input'
         type="text"
-        value={value}
-        onChange={onChangeText}
+        onChange={onChangeFunc}
         placeholder={" Search beer by name" }
       />
     </div>
