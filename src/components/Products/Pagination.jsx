@@ -1,20 +1,23 @@
-import { useState } from "react";
-// import ReactPaginate from "react-paginate";
+import ReactPaginate from "react-paginate";
 
-function Pagination() {
-  // const [data, setData] = useState(data.slice(0, 60));
-  // const [pageNumber,setPageNumber] = useState(0)
-  // useEffect(() => {
-  //   fetch(baseURL)
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       setData(json);
-  //     });
-  // }, []);
+function Pagination({ beersPerPage, data, setPageNumber }) {
+  const pageCount = data.length / beersPerPage;
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
-  // const beersPerPage = 6
-  // const pagesVisited = pageNumber*beersPerPage
-  // const displayBeers = data.slice(pagesVisited,pagesVisited+beersPerPage)
-  return <h1>Pagination</h1>;
+  return (
+    <ReactPaginate
+      previousLabel={"Previous"}
+      nextLabel={"Next"}
+      pageCount={pageCount}
+      onPageChange={changePage}
+      containerClassName={"paginationBttns"}
+      previousLinkClassName={"previousBttn"}
+      nextLinkClassName={"NextBttn"}
+      disabledClassName={"paginationDisabled"}
+      activeClassName={"paginationActive text-light"}
+    />
+  );
 }
 export default Pagination;
