@@ -1,9 +1,9 @@
 //context
 import MainContextProvider from "./contexts/MainContextProvider";
 //components
-import AbvFilter from "./components/Filter/AbvFilter";
-import Products from "./components/Products/Products";
-import SearchBar from "./components/Search/SearchBar";
+import { AbvFilter } from "./components/Filter";
+import { Products } from "./components/Products";
+import SearchBar from "./components/Search";
 //css
 import "./index.css";
 function App() {
