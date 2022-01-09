@@ -1,3 +1,5 @@
-const baseURL = "https://api.punkapi.com/v2/beers?page=2&per_page=60";
+const baseURL = "https://api.punkapi.com/v2/beers?page=1&per_page=60";
+const abv_gt = "https://api.punkapi.com/v2/beers?page=1&per_page=60&abv_gt=3.3";
+const abv_lt = "https://api.punkapi.com/v2/beers?page=1&per_page=60&abv_lt=3.3";
 
-export default baseURL;
+export { baseURL, abv_gt, abv_lt };

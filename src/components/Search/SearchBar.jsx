@@ -1,18 +1,11 @@
-import { useState } from "react";
+//context
+import { useContext } from "react/cjs/react.development";
+import { MainContext } from "../../contexts/MainContextProvider";
+//debounce perform
 import debounce from "lodash.debounce";
 
-// import {AiOutlineSearch} from 'react-icons/ai';
-//components
-import ProductCard from "../Products/ProductCard";
-
-function SearchBar({ data }) {
-  const [search, setSearch] = useState("");
-
-  const getFilteredItems = (search, data) => {
-    return data.filter((item) => item.name.toLowerCase().includes(search));
-  };
-
-  const filteredItems = getFilteredItems(search, data);
+function SearchBar() {
+  const { setSearch } = useContext(MainContext);
 
   const updateQuery = (e) => setSearch(e?.target?.value);
 
@@ -21,25 +14,12 @@ function SearchBar({ data }) {
   return (
     <>
       <div className="search-container my-4">
-        {/* <AiOutlineSearch /> */}
         <input
           className="sbx-custom__input"
           type="text"
           onChange={debouncedOnChange}
           placeholder={" Search beer by name"}
         />
-      </div>
-      <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3 my-5">
-        <h1>Search İtems: </h1>
-        {search &&
-          filteredItems.map((item, index) => (
-            <ProductCard
-              name={item.name}
-              key={item.id}
-              img={item.image_url}
-              date={item.first_brewed}
-            />
-          ))}
       </div>
     </>
   );

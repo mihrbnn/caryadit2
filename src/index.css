@@ -1,30 +1,31 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .img {
   height: 25rem;
-    object-fit: contain;
+  object-fit: contain;
 }
 
+/* search bar */
 .sbx-custom__input {
   display: inline-block;
-  -webkit-transition: box-shadow .4s ease, background .4s ease;
-  transition: box-shadow .4s ease, background .4s ease;
+  -webkit-transition: box-shadow 0.4s ease, background 0.4s ease;
+  transition: box-shadow 0.4s ease, background 0.4s ease;
   border: 0;
   border-radius: 26px;
   box-shadow: inset 0 0 0 2px #000000;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 10px;
   padding-right: 30px;
   padding-left: 37px;
@@ -35,11 +36,14 @@ code {
   font-size: inherit;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.sbx-custom__input::-webkit-search-decoration, .sbx-custom__input::-webkit-search-cancel-button, .sbx-custom__input::-webkit-search-results-button, .sbx-custom__input::-webkit-search-results-decoration {
+.sbx-custom__input::-webkit-search-decoration,
+.sbx-custom__input::-webkit-search-cancel-button,
+.sbx-custom__input::-webkit-search-results-button,
+.sbx-custom__input::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -47,24 +51,51 @@ code {
   box-shadow: inset 0 0 0 2px black;
 }
 
-.sbx-custom__input:focus, .sbx-custom__input:active {
+.sbx-custom__input:focus,
+.sbx-custom__input:active {
   outline: 0;
   box-shadow: inset 0 0 0 2px #000000;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .sbx-custom__input::-webkit-input-placeholder {
-  color: #BBBBBB;
+  color: #bbbbbb;
 }
 
 .sbx-custom__input::-moz-placeholder {
-  color: #BBBBBB;
+  color: #bbbbbb;
 }
 
 .sbx-custom__input:-ms-input-placeholder {
-  color: #BBBBBB;
+  color: #bbbbbb;
 }
 
 .sbx-custom__input::placeholder {
-  color: #BBBBBB;
+  color: #bbbbbb;
+}
+
+/* pagination */
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 4px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.paginationBttns a:hover {
+  background-color: blue;
+  color: white !important;
+}
+
+.paginationActive a {
+  background-color: blue;
+  color: white;
 }
