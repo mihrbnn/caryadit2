@@ -1,6 +1,11 @@
+//pagination
 import ReactPaginate from "react-paginate";
+//contexts
+import { useContext } from "react/cjs/react.development";
+import { MainContext } from "../../contexts/MainContextProvider";
 
-function Pagination({ beersPerPage, data, setPageNumber }) {
+function Pagination() {
+  const { beersPerPage, data, setPageNumber } = useContext(MainContext);
   const pageCount = data.length / beersPerPage;
   const changePage = ({ selected }) => {
     setPageNumber(selected);

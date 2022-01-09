@@ -3,7 +3,7 @@ function ProductCard({ id, name, img, date }) {
     <>
       <div key={id} className="card border-0 my-5">
         <img src={img} className="card-img-top img" alt="..." />
-        <div className="card-body">
+        <div className="card-body text-center">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">First Brewed in: {date}</p>
         </div>
