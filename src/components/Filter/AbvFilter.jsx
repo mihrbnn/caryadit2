@@ -1,27 +1,65 @@
 import { useEffect } from "react";
-import { useContext } from "react/cjs/react.development";
-import { abv_gt, abv_lt } from "../../api";
+import { useContext, useState } from "react/cjs/react.development";
+import { abv_gt, abv_lt, baseURL } from "../../api";
 import { MainContext } from "../../contexts/MainContextProvider";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
+
+function valuetext(value) {
+  return `${value}`;
+}
+
+const abvType = {
+  gt: abv_gt,
+  lt: abv_lt,
+  n: baseURL,
+};
 
 function AbvFilter() {
-  const { setGt, setLt } = useContext(MainContext);
+  const { setData, abvFilterType, setAbvFilterType } = useContext(MainContext);
+  const [alcoholValue, setAlcoholValue] = useState(5);
+
+  const setFilterType = (type) => {
+    setAbvFilterType(type);
+  };
 
   useEffect(() => {
-    fetch(abv_gt)
+    let url = abvType[abvFilterType];
+    url = abvFilterType === "n" ? url : url + alcoholValue;
+
+    fetch(url)
       .then((response) => response.json())
       .then((json) => {
-        setGt(json);
+        setData(json);
       });
-  }, []);
+  }, [abvFilterType, alcoholValue]);
 
-  useEffect(() => {
-    fetch(abv_lt)
-      .then((response) => response.json())
-      .then((json) => {
-        setLt(json);
-      });
-  }, []);
-
-  return <div className="row d-flex flex-row">Abv Filter</div>;
+  return (
+    <div className="row row-cols-auto">
+      <button onClick={() => setFilterType("n")}>None</button>
+      <button value={abv_gt} onClick={() => setFilterType("gt")}>
+        Greater Than
+      </button>
+      <button value={abv_lt} onClick={() => setFilterType("lt")}>
+        Lower Than
+      </button>
+      <Box sx={{ width: 300 }}>
+        <Slider
+          disabled={abvFilterType === "n" ? "disabled" : ""}
+          aria-labelledby="non-linear-slider"
+          value={alcoholValue}
+          min={0}
+          max={41}
+          onChange={(event, value) => setAlcoholValue(value)}
+          valueLabelDisplay="auto"
+          getAriaValueText={valuetext}
+          sx={{
+            width: 300,
+            color: "#000",
+          }}
+        />
+      </Box>
+    </div>
+  );
 }
 export default AbvFilter;
