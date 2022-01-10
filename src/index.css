@@ -91,13 +91,20 @@ code {
 }
 
 .paginationBttns a:hover {
-  background-color: blue;
-  color: white !important;
+  background-color: black;
+  color: white;
+  /* color: white !important; */
 }
 
 .paginationActive a {
-  background-color: blue;
+  background-color: black;
   color: white;
 }
 
+.paginationBttns a {
+  color: black;
+}
 
+.paginationBttns :hover{
+  color: white;
+}
