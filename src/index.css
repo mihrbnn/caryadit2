@@ -61,6 +61,21 @@ code {
 
 .paginationActive a {
   background-color: rgb(21, 21, 22);
+.paginationBttns a:hover {
+  background-color: black;
+  color: white;
+}
+
+.paginationActive a {
+  background-color: black;
+  color: white;
+}
+
+.paginationBttns a {
+  color: black;
+}
+
+.paginationBttns :hover{
   color: white;
 }
 
