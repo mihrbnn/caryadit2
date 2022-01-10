@@ -1,9 +1,10 @@
 //context
 import MainContextProvider from "./contexts/MainContextProvider";
 //components
-import { AbvFilter } from "./components/Filter";
+import { AbvFilter, CheckBoxFilter } from "./components/Filter";
 import { Products } from "./components/Products";
 import SearchBar from "./components/Search";
+
 //css
 import "./index.css";
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <MainContextProvider>
         <SearchBar />
         <AbvFilter />
+        <CheckBoxFilter />
         <Products />
       </MainContextProvider>
     </div>
