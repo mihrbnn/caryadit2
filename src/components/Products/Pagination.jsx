@@ -6,7 +6,7 @@ import { MainContext } from "../../contexts/MainContextProvider";
 
 function Pagination() {
   const { beersPerPage, data, setPageNumber } = useContext(MainContext);
-  const pageCount = data.length / beersPerPage;
+  const pageCount = Math.floor(data.length / beersPerPage);
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };

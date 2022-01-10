@@ -28,7 +28,7 @@ export default function CheckBoxFilter() {
           disabled={check ? "" : "disabled"}
           className="rangeslider"
           min={0}
-          step={0.1}
+          step={1}
           max={7}
           aria-labelledby="non-linear-slider"
           value={phValue}
