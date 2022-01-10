@@ -13,9 +13,12 @@ function SearchBar() {
 
   return (
     <>
-      <div className="search-container my-4">
+      <div
+        className="search-container my-5 d-flex justify-content-center"
+        id="search"
+      >
         <input
-          className="sbx-custom__input"
+          className="input"
           type="text"
           onChange={debouncedOnChange}
           placeholder={" Search beer by name"}
