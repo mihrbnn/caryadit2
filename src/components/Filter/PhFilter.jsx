@@ -47,7 +47,7 @@ const PhFilter = () => {
   return (
     <FormGroup>
       <label htmlFor="ph" className="h5 fw-bold mb-3">
-        Ph Filter : {JSON.stringify(phValue)}
+        pH : {JSON.stringify(phValue)}
       </label>
       <FormControlLabel
         onClick={() => setCheckPH(!checkpH)}

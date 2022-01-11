@@ -3,7 +3,7 @@ const ResetButton = () => {
     <>
       <button
         id="reset"
-        className="reset-button"
+        className="reset-button text-center p-2"
         onClick={() => window.location.reload()}
       >
         Reset

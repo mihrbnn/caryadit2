@@ -18,20 +18,18 @@ function SearchBar() {
   return (
     <>
       <div
-        className="search-container my-5 d-flex justify-content-between"
+        className="search-container my-5 d-flex justify-content-center"
         id="search"
       >
-
         <input
           d-flex
-          className="input"
+          className="input me-4"
           type="text"
           onChange={debouncedOnChange}
           placeholder={" Search beer by name"}
         />
-        <ResetButton d-flex className="ms-5"></ResetButton>
+        <ResetButton className="ms-5 d-flex ">Reset</ResetButton>
       </div>
-      <div></div>
     </>
   );
 }

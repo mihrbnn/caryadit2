@@ -49,7 +49,7 @@ export default function SrmFilter() {
   return (
     <FormGroup>
       <label htmlFor="ph" className="h5 fw-bold mb-3">
-        SRM Filter : {JSON.stringify(srmValue)}
+        SRM : {JSON.stringify(srmValue)}
       </label>
       <FormControlLabel
         onClick={() => {
