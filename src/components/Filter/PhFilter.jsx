@@ -1,0 +1,63 @@
+import { useState } from "react";
+// import Slider, { Range } from "rc-slider";
+// import "rc-slider/assets/index.css";
+
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import { useContext } from "react/cjs/react.development";
+import { MainContext } from "../../contexts/MainContextProvider";
+
+function valuetext(value) {
+  return `${value} pH`;
+}
+
+const PhFilter = () => {
+  const { phValue, setPhValue } = useContext(MainContext);
+
+  const [checkpH, setCheckPH] = useState(false);
+
+  const handleChangePh = (event, newValue) => {
+    setPhValue(newValue);
+  };
+
+  const pHSlider = () => {
+    return (
+      <Box sx={{ width: 300 }}>
+        <Slider
+          disabled={checkpH ? "" : "disabled"}
+          className="rangeslider mx-5"
+          label="ph"
+          min={0}
+          step={1}
+          max={7}
+          aria-labelledby="non-linear-slider"
+          value={phValue}
+          onChange={handleChangePh}
+          valueLabelDisplay="auto"
+          getAriaValueText={valuetext}
+          sx={{
+            color: "#0A0A2A",
+          }}
+        />
+      </Box>
+    );
+  };
+
+  return (
+    <FormGroup>
+      <label htmlFor="ph" className="h5 fw-bold">
+        Ph Filter : {JSON.stringify(phValue)}
+      </label>
+      <FormControlLabel
+        onClick={() => setCheckPH(!checkpH)}
+        control={<Checkbox checked={checkpH ? "checked" : ""} />}
+        label={pHSlider()}
+      />
+    </FormGroup>
+  );
+};
+
+export default PhFilter;

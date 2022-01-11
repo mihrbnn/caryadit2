@@ -1,7 +1,7 @@
 //context
 import MainContextProvider from "./contexts/MainContextProvider";
 //components
-import { AbvFilter, CheckBoxFilter } from "./components/Filter";
+import { AllFilters } from "./components/Filter";
 import { Products } from "./components/Products";
 import SearchBar from "./components/Search";
 
@@ -12,8 +12,7 @@ function App() {
     <div className="container my-5">
       <MainContextProvider>
         <SearchBar />
-        <AbvFilter />
-        <CheckBoxFilter />
+        <AllFilters />
         <Products />
       </MainContextProvider>
     </div>
