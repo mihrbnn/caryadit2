@@ -17,6 +17,7 @@ export default function MainContextProvider({ children }) {
   const pagesVisited = pageNumber * beersPerPage;
   // abv filter data
   const [abvFilterType, setAbvFilterType] = useState("n");
+  const [alcoholValue, setAlcoholValue] = useState(5);
 
   const value = {
     data,
@@ -35,6 +36,8 @@ export default function MainContextProvider({ children }) {
     setPhValue,
     srmValue,
     setSrmValue,
+    alcoholValue,
+    setAlcoholValue,
   };
 
   return <MainContext.Provider value={value}>{children}</MainContext.Provider>;
