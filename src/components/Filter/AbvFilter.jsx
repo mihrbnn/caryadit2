@@ -42,14 +42,37 @@ function AbvFilter() {
 
   return (
     <div>
-      <div className="row row-cols-auto frame">
-        <button classname="btn-3 custom-btn" onClick={() => setFilterType("n")}>
+      <label htmlFor="alcoholValue" className="h5 fw-bold mb-3">
+        Alcohol by volume : {JSON.stringify(alcoholValue)}
+      </label>
+      <div className="row row-cols-auto mb-3">
+        <button
+          className={
+            `btn border border-primary ` +
+            (abvFilterType === "n" ? "bg-primary text-light" : "")
+          }
+          onClick={() => setFilterType("n")}
+        >
           None
         </button>
-        <button value={abv_gt} onClick={() => setFilterType("gt")}>
+        <button
+          className={
+            `btn border border-primary mx-2 ` +
+            (abvFilterType === "gt" ? "bg-primary text-light" : "")
+          }
+          value={abv_gt}
+          onClick={() => setFilterType("gt")}
+        >
           Greater Than
         </button>
-        <button value={abv_lt} onClick={() => setFilterType("lt")}>
+        <button
+          className={
+            `btn border border-primary ` +
+            (abvFilterType === "lt" ? "bg-primary text-light" : "")
+          }
+          value={abv_lt}
+          onClick={() => setFilterType("lt")}
+        >
           Lower Than
         </button>
       </div>
@@ -64,9 +87,6 @@ function AbvFilter() {
           onChange={(event, value) => setAlcoholValue(value)}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
-          sx={{
-            color: "#08088A",
-          }}
         />
       </Box>
     </div>
