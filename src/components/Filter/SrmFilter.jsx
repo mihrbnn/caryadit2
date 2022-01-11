@@ -31,7 +31,7 @@ export default function SrmFilter() {
       >
         <Slider
           disabled={checkSrm ? "" : "disabled"}
-          className="rangeslider mx-5"
+          className="ms-5"
           min={0}
           step={1}
           max={140}
@@ -40,9 +40,7 @@ export default function SrmFilter() {
           onChange={handleChangeSrm}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
-          sx={{
-            color: "#000",
-          }}
+          size="small"
         />
       </Box>
     );
@@ -50,7 +48,7 @@ export default function SrmFilter() {
 
   return (
     <FormGroup>
-      <label htmlFor="ph" className="h5 fw-bold">
+      <label htmlFor="ph" className="h5 fw-bold mb-3">
         SRM Filter : {JSON.stringify(srmValue)}
       </label>
       <FormControlLabel

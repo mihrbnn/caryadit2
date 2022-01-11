@@ -12,19 +12,15 @@ code {
     monospace;
 }
 
-/*slider */
-.rangeslider {
-  width: 400px;
-  margin: 50;
-}
 /* search bar */
 
 #search input[type="text"] {
-  border: 2px solid #d1d1d1;
-  font: bold 14px Arial, Helvetica, Sans-serif;
+  border: 2px solid #929292;
+  font: bold 16px Arial, Helvetica, Sans-serif;
   color: #00000049;
-  width: 250px;
-  padding: 8px 15px 6px 35px;
+  width: 100%;
+  height: 3rem;
+  padding: 8px 25px 6px 35px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -38,9 +34,9 @@ code {
   transition: all 0.7s ease 0s;
 }
 
-#search input[type="text"]:focus {
-  width: 320px;
-}
+/* #search input[type="text"]:focus {
+  width: 45rem;
+} */
 
 /* buttons */
 
@@ -181,7 +177,6 @@ button {
 .image-box {
   background: #ffffff;
   overflow: hidden;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 7px;
 }
@@ -197,18 +192,18 @@ button {
 }
 
 .card:hover .image-box img {
-  opacity: 0.7;
+  opacity: 0.8;
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
   -ms-transform: scale(1.15);
   -o-transform: scale(1.15);
-  transform: scale(1.15);
+  transform: scale(1.07);
 }
 
 .card {
   background: #ffffff;
   margin-top: 50px;
-
+  cursor: pointer;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;

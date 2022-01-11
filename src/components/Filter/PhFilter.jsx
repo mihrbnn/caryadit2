@@ -28,19 +28,17 @@ const PhFilter = () => {
       <Box sx={{ width: 300 }}>
         <Slider
           disabled={checkpH ? "" : "disabled"}
-          className="rangeslider mx-5"
+          className="ms-3 mt-2"
           label="ph"
           min={0}
           step={1}
           max={7}
           aria-labelledby="non-linear-slider"
           value={phValue}
-          onChange={handleChangePh}
+          onChangeCommitted={handleChangePh}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
-          sx={{
-            color: "#0A0A2A",
-          }}
+          size="small"
         />
       </Box>
     );
@@ -48,7 +46,7 @@ const PhFilter = () => {
 
   return (
     <FormGroup>
-      <label htmlFor="ph" className="h5 fw-bold">
+      <label htmlFor="ph" className="h5 fw-bold mb-3">
         Ph Filter : {JSON.stringify(phValue)}
       </label>
       <FormControlLabel
