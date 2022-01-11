@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useContext, useState } from "react/cjs/react.development";
 import { abv_gt, abv_lt, baseURL } from "../../api";
 import { MainContext } from "../../contexts/MainContextProvider";
+import "../../index.css";
 
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
@@ -48,8 +49,8 @@ function AbvFilter() {
       <div className="row row-cols-auto mb-3">
         <button
           className={
-            `btn border border-primary ` +
-            (abvFilterType === "n" ? "bg-primary text-light" : "")
+            `btn border button-border p-2 rounded ` +
+            (abvFilterType === "n" ? "button-bg  text-light" : "")
           }
           onClick={() => setFilterType("n")}
         >
@@ -57,8 +58,8 @@ function AbvFilter() {
         </button>
         <button
           className={
-            `btn border border-primary mx-2 ` +
-            (abvFilterType === "gt" ? "bg-primary text-light" : "")
+            `btn border button-border mx-2 p-2 rounded ` +
+            (abvFilterType === "gt" ? "button-bg  text-light" : "")
           }
           value={abv_gt}
           onClick={() => setFilterType("gt")}
@@ -67,8 +68,8 @@ function AbvFilter() {
         </button>
         <button
           className={
-            `btn border border-primary ` +
-            (abvFilterType === "lt" ? "bg-primary text-light" : "")
+            `btn border button-border p-2 rounded ` +
+            (abvFilterType === "lt" ? "button-bg  text-light" : "")
           }
           value={abv_lt}
           onClick={() => setFilterType("lt")}

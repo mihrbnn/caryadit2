@@ -19,7 +19,6 @@ function Products() {
   } = useContext(MainContext);
 
   useEffect(() => {
-    console.log(phValue);
     fetch(baseURL)
       .then((response) => response.json())
       .then((json) => {

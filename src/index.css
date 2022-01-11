@@ -6,9 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/* 
 #root {
-  background-color: #fec66e;
+  background-color: #d9d9d9;
+} */
+
+.navbar-bg,
+.footer-bg,
+.button-bg {
+  background-color: #021e66 !important;
+}
+
+.button-border {
+  border: 1px solid #021e66 !important;
 }
 
 code {
@@ -17,13 +27,19 @@ code {
 }
 
 /* search bar */
+#search input {
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
 
+#search input:focus-visible {
+  outline: #021e66 auto 1px;
+}
 #search input[type="text"] {
   border: 2px solid #929292;
   font: bold 16px Arial, Helvetica, Sans-serif;
   color: #00000049;
-  width: 40%;
-  height: 2.2rem;
+  width: 60%;
+  height: 3rem;
   padding: 8px 25px 6px 35px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -31,7 +47,7 @@ code {
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 1px 3px #021e66 inset;
   -webkit-transition: all 0.7s ease 0s;
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
@@ -39,115 +55,31 @@ code {
 }
 
 #search input[type="text"]:focus {
-  width: 30rem;
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 /* reset button */
 
 #reset {
-  border: 2px solid #929292;
-  font: bold 16px Arial, Helvetica, Sans-serif;
-  color: #00000049;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  font: bold 18px Arial, Helvetica, Sans-serif;
+  color: #021e66;
   width: 15%;
-  height: 2.2rem;
+  height: 3rem;
   padding: 8px 25px 6px 35px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
   -webkit-transition: all 0.7s ease 0s;
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
   transition: all 0.7s ease 0s;
 }
 
-/* buttons */
-
-.frame {
-  width: 90%;
-  margin: 40px auto;
-  text-align: center;
-}
-button {
-  margin: 20px;
-  outline: none;
-}
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  padding: 10px 25px;
-  border: 2px solid #000;
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-}
-
-.btn-3 {
-  line-height: 39px;
-  padding: 0;
-}
-.btn-3:hover {
-  background: transparent;
-  color: #000;
-}
-.btn-3 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.btn-3:before,
-.btn-3:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  background: #000;
-  transition: all 0.3s ease;
-}
-.btn-3:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-3:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-3:hover:before {
-  height: 100%;
-}
-.btn-3:hover:after {
-  width: 100%;
-}
-.btn-3 span:before,
-.btn-3 span:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 0;
-  background: #000;
-  transition: all 0.3s ease;
-}
-.btn-3 span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-3 span:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-3 span:hover:before {
-  height: 100%;
-}
-.btn-3 span:hover:after {
-  width: 100%;
+#reset:hover {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 /* pagination */
@@ -168,25 +100,25 @@ button {
 }
 
 .paginationBttns a:hover {
-  background-color: rgb(21, 21, 22);
+  background-color: #021e66;
   color: white !important;
 }
 
 .paginationActive a {
-  background-color: rgb(21, 21, 22);
+  background-color: #021e66;
 }
 .paginationBttns a:hover {
-  background-color: black;
+  background-color: #021e66;
   color: white;
 }
 
 .paginationActive a {
-  background-color: black;
+  background-color: #021e66;
   color: white;
 }
 
 .paginationBttns a {
-  color: black;
+  color: #021e66;
 }
 
 .paginationBttns :hover {
@@ -198,14 +130,12 @@ button {
 .img {
   height: 40rem;
   object-fit: contain;
-  background-color: #fffbc3;
 }
 
 .image-box {
   overflow: hidden;
   border-radius: 5px;
   padding: 7px;
-  background-color: #fffbc3;
 }
 
 .image-box img {
@@ -250,17 +180,9 @@ button {
   margin-top: 50px;
 }
 
-#card {
-  background-color: #fffbc3;
-}
-
 /*team members*/
 
 .userimage {
   width: 150px;
   height: 150px;
 }
-
-/* #footer {
-  background-color: #041c44;
-} */

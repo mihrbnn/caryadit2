@@ -1,14 +1,13 @@
 import { useState } from "react";
-// import Slider, { Range } from "rc-slider";
-// import "rc-slider/assets/index.css";
+import { useContext } from "react/cjs/react.development";
+import { MainContext } from "../../contexts/MainContextProvider";
+//slider-checkbox
 
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { useContext } from "react/cjs/react.development";
-import { MainContext } from "../../contexts/MainContextProvider";
 
 function valuetext(value) {
   return `${value} pH`;
