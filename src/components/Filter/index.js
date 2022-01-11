@@ -1,4 +1,5 @@
+import AllFilters from "./AllFilters";
 import AbvFilter from "./AbvFilter";
-import CheckBoxFilter from "./CheckBoxFilter";
+import SrmFilter from "./SrmFilter";
 
-export { AbvFilter, CheckBoxFilter };
+export { AllFilters, AbvFilter, SrmFilter };

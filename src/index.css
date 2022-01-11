@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+/*slider */
+.rangeslider {
+  width: 400px;
+  margin: 50;
+}
 /* search bar */
 
 #search input[type="text"] {
