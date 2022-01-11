@@ -12,8 +12,6 @@ function SearchBar() {
   const updateQuery = (e) => setSearch(e?.target?.value);
 
   const debouncedOnChange = debounce(updateQuery, 3000);
-  console.log("query", updateQuery);
-  console.log("search", search);
 
   return (
     <>

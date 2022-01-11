@@ -10,16 +10,17 @@ import Nav from "./components/base/Nav";
 //css
 import "./index.css";
 function App() {
-  return ( <>
-    <Nav></Nav>
-    <div className="container my-5">
-      <MainContextProvider>
-        <SearchBar />
-        <AllFilters />
-        <Products />
-      </MainContextProvider>
-    </div>
-    <Footer></Footer>
+  return (
+    <>
+      <Nav />
+      <div className="container my-5">
+        <MainContextProvider>
+          <SearchBar />
+          <AllFilters />
+          <Products />
+        </MainContextProvider>
+      </div>
+      <Footer />
     </>
   );
 }
