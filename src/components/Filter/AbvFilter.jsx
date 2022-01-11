@@ -41,16 +41,18 @@ function AbvFilter() {
   }, [abvFilterType, alcoholValue]);
 
   return (
-    <div className="row row-cols-auto frame">
-      <button classname="btn-3 custom-btn" onClick={() => setFilterType("n")}>
-        None
-      </button>
-      <button value={abv_gt} onClick={() => setFilterType("gt")}>
-        Greater Than
-      </button>
-      <button value={abv_lt} onClick={() => setFilterType("lt")}>
-        Lower Than
-      </button>
+    <div>
+      <div className="row row-cols-auto frame">
+        <button classname="btn-3 custom-btn" onClick={() => setFilterType("n")}>
+          None
+        </button>
+        <button value={abv_gt} onClick={() => setFilterType("gt")}>
+          Greater Than
+        </button>
+        <button value={abv_lt} onClick={() => setFilterType("lt")}>
+          Lower Than
+        </button>
+      </div>
       <Box sx={{ width: 300 }}>
         <Slider
           disabled={abvFilterType === "n" ? "disabled" : ""}
@@ -63,7 +65,6 @@ function AbvFilter() {
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
           sx={{
-            width: 250,
             color: "#08088A",
           }}
         />
