@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useContext, useState } from "react/cjs/react.development";
+import { useEffect, useContext, useState } from "react";
 import { abv_gt, abv_lt, baseURL } from "../../api";
 import { MainContext } from "../../contexts/MainContextProvider";
 import "../../index.css";

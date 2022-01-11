@@ -1,7 +1,7 @@
 //pagination
 import ReactPaginate from "react-paginate";
 //contexts
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 import { MainContext } from "../../contexts/MainContextProvider";
 
 function Pagination() {

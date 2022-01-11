@@ -1,5 +1,5 @@
 //context
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 import { MainContext } from "../../contexts/MainContextProvider";
 import { BiSearchAlt } from "react-icons/bi";
 //debounce perform
