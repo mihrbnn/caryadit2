@@ -5,16 +5,12 @@ export const MainContext = createContext();
 export default function MainContextProvider({ children }) {
   //main beers
   const [data, setData] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+  // ph ve srm filter
+  const [phValue, setPhValue] = useState([0, 7]);
+  const [srmValue, setSrmValue] = useState([0]);
   //search
   const [search, setSearch] = useState("");
-  const getFilteredItems = (search, data) => {
-    if (!search) {
-      return data;
-    }
-    return data.filter((item) => item.name.toLowerCase().includes(search));
-  };
-
-  const filteredItems = getFilteredItems(search, data);
   //pagination
   const [pageNumber, setPageNumber] = useState(0);
   const beersPerPage = 6;
@@ -27,7 +23,7 @@ export default function MainContextProvider({ children }) {
     setData,
     search,
     setSearch,
-    getFilteredItems,
+    setFilteredItems,
     filteredItems,
     pageNumber,
     setPageNumber,
@@ -35,6 +31,10 @@ export default function MainContextProvider({ children }) {
     pagesVisited,
     abvFilterType,
     setAbvFilterType,
+    phValue,
+    setPhValue,
+    srmValue,
+    setSrmValue,
   };
 
   return <MainContext.Provider value={value}>{children}</MainContext.Provider>;

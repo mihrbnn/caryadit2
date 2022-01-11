@@ -4,28 +4,35 @@ import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { useContext } from "react/cjs/react.development";
+import { MainContext } from "../../contexts/MainContextProvider";
 
 function valuetext(value) {
   return `${value} pH`;
 }
 
 export default function CheckBoxFilter() {
-  const [phValue, setPhValue] = useState([0, 7]);
-  const [srmValue, setSrmValue] = useState([0]);
-  const [check, setCheck] = useState(false);
+  const { setData, phValue, setPhValue, srmValue, setSrmValue } =
+    useContext(MainContext);
+
+  const [checkpH, setCheckPH] = useState(false);
+  const [checkSrm, setCheckSrm] = useState(false);
 
   const handleChangePh = (event, newValue) => {
     setPhValue(newValue);
+    // setData(filtered);
   };
   const handleChangeSrm = (event, newValue) => {
     setSrmValue(newValue);
+    // setData(filtered);
   };
 
   const pHSlider = () => {
     return (
       <Box sx={{ width: 300 }}>
+        <h3>Ph: </h3>
         <Slider
-          disabled={check ? "" : "disabled"}
+          disabled={checkpH ? "" : "disabled"}
           className="rangeslider"
           min={0}
           step={1}
@@ -47,8 +54,9 @@ export default function CheckBoxFilter() {
   const srmSlider = () => {
     return (
       <Box sx={{ width: 300 }}>
+        <h3>SRM: </h3>
         <Slider
-          disabled={check ? "" : "disabled"}
+          disabled={checkSrm ? "" : "disabled"}
           className="rangeslider"
           min={0}
           step={1}
@@ -71,15 +79,15 @@ export default function CheckBoxFilter() {
     <>
       <FormGroup>
         <FormControlLabel
-          onClick={() => setCheck(!check)}
-          control={<Checkbox checked={check ? "checked" : ""} />}
+          onClick={() => setCheckPH(!checkpH)}
+          control={<Checkbox checked={checkpH ? "checked" : ""} />}
           label={pHSlider()}
         />
       </FormGroup>
       <FormGroup>
         <FormControlLabel
-          onClick={() => setCheck(!check)}
-          control={<Checkbox checked={check ? "checked" : ""} />}
+          onClick={() => setCheckSrm(!checkSrm)}
+          control={<Checkbox checked={checkSrm ? "checked" : ""} />}
           label={srmSlider()}
         />
       </FormGroup>
