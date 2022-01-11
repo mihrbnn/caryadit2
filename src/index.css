@@ -257,3 +257,11 @@ button {
   transition: all 0.2s ease-in;
   margin-top: 50px;
 }
+
+
+/*images*/
+
+.userimage {
+  width: 150px;
+  height: 150px;
+}

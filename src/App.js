@@ -4,11 +4,14 @@ import MainContextProvider from "./contexts/MainContextProvider";
 import { AllFilters } from "./components/Filter";
 import { Products } from "./components/Products";
 import SearchBar from "./components/Search";
+import Footer from "./components/base/Footer";
+import Nav from "./components/base/Nav";
 
 //css
 import "./index.css";
 function App() {
-  return (
+  return ( <>
+    <Nav></Nav>
     <div className="container my-5">
       <MainContextProvider>
         <SearchBar />
@@ -16,6 +19,8 @@ function App() {
         <Products />
       </MainContextProvider>
     </div>
+    <Footer></Footer>
+    </>
   );
 }
 

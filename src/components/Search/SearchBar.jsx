@@ -1,6 +1,7 @@
 //context
 import { useContext } from "react/cjs/react.development";
 import { MainContext } from "../../contexts/MainContextProvider";
+import { BiSearchAlt } from "react-icons/bi";
 //debounce perform
 import debounce from "lodash.debounce";
 import ResetButton from "../Reset/ResetButton";
@@ -20,6 +21,7 @@ function SearchBar() {
         className="search-container my-5 d-flex justify-content-between"
         id="search"
       >
+
         <input
           d-flex
           className="input"
