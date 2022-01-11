@@ -17,8 +17,13 @@ const abvType = {
 };
 
 function AbvFilter() {
-  const { setData, abvFilterType, setAbvFilterType } = useContext(MainContext);
-  const [alcoholValue, setAlcoholValue] = useState(5);
+  const {
+    setData,
+    abvFilterType,
+    setAbvFilterType,
+    setAlcoholValue,
+    alcoholValue,
+  } = useContext(MainContext);
 
   const setFilterType = (type) => {
     setAbvFilterType(type);
