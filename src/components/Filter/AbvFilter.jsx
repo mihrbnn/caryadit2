@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useContext, useState } from "react/cjs/react.development";
 import { abv_gt, abv_lt, baseURL } from "../../api";
 import { MainContext } from "../../contexts/MainContextProvider";
+
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
@@ -35,8 +36,10 @@ function AbvFilter() {
   }, [abvFilterType, alcoholValue]);
 
   return (
-    <div className="row row-cols-auto">
-      <button onClick={() => setFilterType("n")}>None</button>
+    <div className="row row-cols-auto frame">
+      <button classname="btn-3 custom-btn" onClick={() => setFilterType("n")}>
+        None
+      </button>
       <button value={abv_gt} onClick={() => setFilterType("gt")}>
         Greater Than
       </button>
@@ -48,14 +51,15 @@ function AbvFilter() {
           disabled={abvFilterType === "n" ? "disabled" : ""}
           aria-labelledby="non-linear-slider"
           value={alcoholValue}
+          size="small"
           min={0}
           max={41}
           onChange={(event, value) => setAlcoholValue(value)}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
           sx={{
-            width: 300,
-            color: "#000",
+            width: 250,
+            color: "#08088A",
           }}
         />
       </Box>

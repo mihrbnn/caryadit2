@@ -1,6 +1,9 @@
 import { useState } from "react";
+import Slider, { Range } from "rc-slider";
+import "rc-slider/assets/index.css";
+
 import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
+// import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -26,52 +29,60 @@ export default function CheckBoxFilter() {
     setSrmValue(newValue);
     // setData(filtered);
   };
+  // const Slider = require("rc-slider");
+  // const createSliderWithTooltip = Slider.createSliderWithTooltip;
+  // const Range = createSliderWithTooltip(Slider.Range);
 
   const pHSlider = () => {
     return (
-      <Box sx={{ width: 300 }}>
-        <h3>Ph: </h3>
-        <Slider
-          disabled={checkpH ? "" : "disabled"}
-          className="rangeslider"
-          min={0}
-          step={1}
-          max={7}
-          aria-labelledby="non-linear-slider"
-          value={phValue}
-          onChange={handleChangePh}
-          valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-          sx={{
-            width: 300,
-            color: "#000",
-          }}
-        />
-      </Box>
+      <Range
+        disabled={checkpH ? "" : "disabled"}
+        className="rangeslider"
+        count={3}
+        defaultValue={[20, 40, 60, 80]}
+        pushable
+        trackStyle={[{ backgroundColor: "red" }, { backgroundColor: "green" }]}
+        handleStyle={[
+          { backgroundColor: "yellow" },
+          { backgroundColor: "gray" },
+        ]}
+        railStyle={{ backgroundColor: "black" }}
+        min={0}
+        step={0.1}
+        max={7}
+        // aria-labelledby="non-linear-slider"
+        // value={phValue}
+        // onChange={handleChangePh}
+        // valueLabelDisplay="auto"
+        // getAriaValueText={valuetext}
+        // sx={{
+        //   width: 250,
+        //   color: "#0A0A2A",
+        // }}
+      />
     );
   };
 
   const srmSlider = () => {
     return (
-      <Box sx={{ width: 300 }}>
-        <h3>SRM: </h3>
-        <Slider
-          disabled={checkSrm ? "" : "disabled"}
-          className="rangeslider"
-          min={0}
-          step={1}
-          max={140}
-          aria-labelledby="non-linear-slider"
-          value={srmValue}
-          onChange={handleChangeSrm}
-          valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-          sx={{
-            width: 300,
-            color: "#000",
-          }}
-        />
-      </Box>
+      <Slider
+        disabled={checkSrm ? "" : "disabled"}
+        className="rangeslider"
+        count={3}
+        defaultValue={[20, 40, 60, 80]}
+        // min={0}
+        // step={1}
+        // max={140}
+        // aria-labelledby="non-linear-slider"
+        value={srmValue}
+        onChange={handleChangeSrm}
+        // valueLabelDisplay="auto"
+        // getAriaValueText={valuetext}
+        // sx={{
+        //   width: 300,
+        //   color: "#000",
+        // }}
+      />
     );
   };
 
